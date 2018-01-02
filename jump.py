@@ -6,7 +6,7 @@ import math
 import random
 import os
 
-ADB_PATH = r"adb.exe"
+ADB_PATH = r"platform-tools\adb.exe"
 WIDTH = 1080
 HEIGHT = 1920
 
