@@ -37,10 +37,11 @@ while True:
     leng *= 2 / math.sqrt(3)
     t = leng * FACTOR
 
-    # Operate
-    scrposx = int((0.6 + 0.1 * random.random()) * WIDTH)
-    scrposy = int((0.8 + 0.1 * random.random()) * HEIGHT)
-    scrpos = [str(scrposx), str(scrposy), str(scrposx), str(scrposy)]
+    scrposx = int(0.6 * WIDTH) + random.uniform(-100, 100)
+    scrposy = int(0.8 * HEIGHT) + random.uniform(-100, 100)
+    scrpos = [str(scrposx), str(scrposy),
+              str(scrposx + random.uniform(-5, 5)),
+              str(scrposy + random.uniform(-5, 5))]
     scrposstr = ' '.join(scrpos) + ' '
     command = ADB_PATH + " shell input swipe " + scrposstr + str(int(t))
     os.popen(command).read()
